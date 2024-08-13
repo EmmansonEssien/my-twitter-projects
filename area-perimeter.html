@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+ <head> 
+  <title>perimeter calculator</title>
+ </head>
+  <body>
+    <h1 style="color: rgb(15, 2, 36); text-decoration: underline;;">Area-Perimeter calculator: </h1>
+    <div id="container">
+    
+     <label>length:</label>
+     <input type="text" id="txtlength" value="0"/> <br/>
+
+     <label>breath:</label>
+     <input type="text" id="txtbreath" value="0"/> <br/>
+
+
+
+     <input style="background-color: green;" type="button" value="calculate" onclick="calculate()" />
+     <input style="background-color: red;" type="button" value="reset" onclick="reset()"/><br/><br/>
+
+     <span style="font-weight: bold;" id="spnArea"> Area :</span><br>
+
+     <span style="font-weight: bolder;" id="spnPerimeter"> perimeter :</span>
+    </div>
+    <script type="text/javascript" >
+
+      function calculate()
+      {
+        var L = Number(document.getElementById("txtlength").value);
+        var B = Number(document.getElementById("txtbreath").value);
+        var Area = L * B;
+        var Perimeter = (L + B) *2;
+        document.getElementById("spnArea").innerHTML ="Area ="  + Area.toFixed(2);
+        document.getElementById("spnPerimeter").innerHTML ="Perimeter =" + Perimeter.toFixed(2);
+        
+        
+      }
+      function reset()
+      {
+        document.getElementById("txtlength").value = "0";
+        document.getElementById("txtbreath").value = "0";
+        document.getElementById("spnArea").innerHTML = " Area = 0 ";
+        document.getElementById("spnPerimeter").innerHTML = "Perimeter = 0 ";
+      }
+    </script> 
+
+
+  </body>
+</html>
